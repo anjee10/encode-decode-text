@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { connect } from 'react-redux';
+import Input from './components/Input';
+import Output from './components/Output';
 
-function App() {
+import './App.css';
+import { handleEncoding, handleDecoding, updateCurrent } from './actions';
+
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Input {...props} />
+      <Output {...props} />
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => state;
+const mapDispatchToProps = (dispatch) => ({
+  handleEncoding: (currentInput) => dispatch(handleEncoding(currentInput)),
+  handleDecoding: (currentInput) => dispatch(handleDecoding(currentInput)),
+  updateCurrent: (currentInput) => dispatch(updateCurrent(currentInput))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

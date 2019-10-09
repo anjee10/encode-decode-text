@@ -1,0 +1,10 @@
+### Build
+
+`yarn run build` or `npm run build` to build code.
+
+Before running this command, need to install dependencies through `yarn` or `npm install`.
+
+### TODOs
+
+- Component testing with storybook
+- Enzyme testing

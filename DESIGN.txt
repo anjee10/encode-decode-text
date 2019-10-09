@@ -1,0 +1,7 @@
+### Design pattern
+
+Simple controller / view design pattern is used in this code challange. This design pattern separates logic from view, making view components independent from the main business logic.
+
+Requirement was less to satisfy Higher Order Component (HOC) design pattern which is perfect to reuse components.
+
+Also true for Provider design pattern where you need to execute remote calls only once and where side effects are expesive, here it is not required.
